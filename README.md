@@ -1,4 +1,4 @@
-```markdown
+
 # Counter for Christmas
 
 Un contador de días hasta Navidad, estilizado con CSS y fácil de integrar en cualquier sitio web.
@@ -31,6 +31,3 @@ Un contador de días hasta Navidad, estilizado con CSS y fácil de integrar en c
 ## Licencia
 
 Este proyecto no tiene una licencia específica.
-```
-
-Puedes crear el archivo README.md en tu repositorio y copiar este contenido.
