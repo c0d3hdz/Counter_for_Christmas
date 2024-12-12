@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Christmas</title>
+        <link rel="stylesheet" href="./styles.css" />
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Poetsen+One&family=Slabo+27px&display=swap');
+        </style>
+    </head>
+    <style>
+        :root {
+            color-scheme: light dark;
+            --border-radius: 10px;
+            --font-size: 3.5rem;
+            --font-family: Arial, sans-serif;
+            --color-hours: #f00;
+            --color-minutes: #0f0;
+            --color-seconds: rgb(255, 242, 0);
+        }
+        body {
+            display: grid;
+            place-items: center;
+            font-family: monospace;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .Anuncio {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            box-sizing: content-box;
+            margin: 0;
+            font-size: 3rem;
+            font-family: 'Mountains of Christmas', serif;
+            font-weight: 700;
+            font-style: normal;
+            h1 {
+                color: #fff;
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff0000, 0 0 70px #ff0000,
+                    0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
+                animation: text-shadow 10s ease-in-out infinite;
+            }
+            h1::before {
+                content: 'For';
+                position: absolute;
+                color: #fff;
+                font-size: 1.4rem;
+                top: 25%;
+                left: 5%;
+            }
+        }
+        @keyframes text-shadow {
+            0% {
+                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff0000, 0 0 70px #ff0000,
+                    0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
+            }
+            100% {
+                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00ff00, 0 0 35px #00ff00,
+                    0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 75px #00ff00;
+            }
+        }
+        x-counter {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 20px;
+            font-size: var(--font-size);
+            .hours,
+            .minutes,
+            .days,
+            .seconds {
+                position: relative;
+                border-radius: var(--border-radius);
+                padding: 10px;
+                background-color: rgba(0, 0, 0, 0.5);
+                color: #fff;
+            }
+            .hours {
+                color: var(--color-hours);
+            }
+            .hours::after {
+                content: 'Hours';
+                position: absolute;
+                color: #fff;
+                font-size: 1rem;
+                bottom: -20px;
+                left: 25%;
+            }
+            .minutes {
+                color: var(--color-minutes);
+            }
+            .minutes::after {
+                content: 'Minutes';
+                position: absolute;
+                color: #fff;
+                font-size: 1rem;
+                bottom: -20px;
+                left: 15%;
+            }
+            .days {
+                color: var(--color-seconds);
+            }
+            .days::after {
+                content: 'Days';
+                position: absolute;
+                color: #fff;
+                font-size: 1rem;
+                bottom: -20px;
+                left: 25%;
+            }
+            .seconds {
+                margin-top: 11%;
+                color: rgb(128, 128, 128);
+                font-size: 12px;
+            }
+        }
+    </style>
+    <body>
+        <main>
+            <div class="Anuncio">
+                <h1>Christmas</h1>
+            </div>
+            <div class="container">
+                <div class="tree">
+                    <div class="branch" style="--x: 0">
+                        <span style="--i: 0"> </span>
+                        <span style="--i: 1"></span>
+                        <span style="--i: 2"></span>
+                        <span style="--i: 3"></span>
+                    </div>
+                    <div class="branch" style="--x: 1">
+                        <span style="--i: 0"></span>
+                        <span style="--i: 1"></span>
+                        <span style="--i: 2"></span>
+                        <span style="--i: 3"></span>
+                    </div>
+                    <div class="branch" style="--x: 2">
+                        <span style="--i: 0"></span>
+                        <span style="--i: 1"></span>
+                        <span style="--i: 2"></span>
+                        <span style="--i: 3"></span>
+                    </div>
+                    <div class="branch" style="--x: 3">
+                        <span style="--i: 0"></span>
+                        <span style="--i: 1"></span>
+                        <span style="--i: 2"></span>
+                        <span style="--i: 3"></span>
+                    </div>
+                    <div class="stem">
+                        <span style="--i: 0"></span>
+                        <span style="--i: 1"></span>
+                        <span style="--i: 2"></span>
+                        <span style="--i: 3"></span>
+                    </div>
+                    <span class="shadow"></span>
+                </div>
+            </div>
+            <x-counter>
+                <span class="days">00</span>
+                <p>:</p>
+                <span class="hours">00</span>
+                <p>:</p>
+                <span class="minutes">00</span>
+                <span class="seconds">00</span>
+            </x-counter>
+        </main>
+    </body>
+    <script type="module">
+        const daysElement = document.querySelector('.days')
+        const hoursElement = document.querySelector('.hours')
+        const minutesElement = document.querySelector('.minutes')
+        const secondsElement = document.querySelector('.seconds')
+
+        const formatTime = time => (time < 10 ? `0${time}` : time)
+
+        const worker = new Worker('worker.js')
+        worker.onmessage = ({ data }) => {
+            daysElement.textContent = formatTime(data.days)
+            hoursElement.textContent = formatTime(data.hours)
+            minutesElement.textContent = formatTime(data.minutes)
+            secondsElement.textContent = formatTime(data.seconds)
+        }
+
+        worker.onerror = event => {
+            console.error('Error en el worker:', event)
+        }
+
+        worker.postMessage({ duration: 1000 })
+    </script>
+</html>
