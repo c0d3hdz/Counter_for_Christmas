@@ -88,8 +88,8 @@
             .hours::after {
                 content: 'Hours';
                 position: absolute;
-                color: #fff;
-                font-size: 1rem;
+                color: #8a8a8a4e;
+                font-size: 12px;
                 bottom: -20px;
                 left: 25%;
             }
@@ -99,10 +99,10 @@
             .minutes::after {
                 content: 'Minutes';
                 position: absolute;
-                color: #fff;
-                font-size: 1rem;
+                color: #8a8a8a4e;
+                font-size: 12px;
                 bottom: -20px;
-                left: 15%;
+                left: 25%;
             }
             .days {
                 color: var(--color-seconds);
@@ -110,8 +110,8 @@
             .days::after {
                 content: 'Days';
                 position: absolute;
-                color: #fff;
-                font-size: 1rem;
+                color: #8a8a8a4e;
+                font-size: 12px;
                 bottom: -20px;
                 left: 25%;
             }
@@ -121,8 +121,7 @@
                 font-size: 12px;
             }
         }
-        @media only screen and (max-width: 768px) {
-            /* Estilos para teléfonos */
+        @media screen and (max-width: 768px) {
             body {
                 font-size: 16px;
                 display: flex;
@@ -131,14 +130,13 @@
             main {
                 margin: auto;
             }
-            .tree{
+            .tree {
                 display: none;
             }
 
             .Anuncio {
                 font-size: 2rem;
             }
-
 
             x-counter {
                 gap: 5px;
@@ -148,9 +146,9 @@
 
             .hours,
             .minutes,
-            .days,
-            .seconds {
-                padding: 5px;
+            .days {
+                padding: 50px;
+                position: relative;
             }
         }
     </style>
