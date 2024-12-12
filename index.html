@@ -4,154 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Christmas</title>
-        <link rel="stylesheet" href="./styles.css" />
+        <link rel="stylesheet" href="./style/styles.css" />
+        <link rel="stylesheet" href="./style/index.css" />
         <style>
             @import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Poetsen+One&family=Slabo+27px&display=swap');
         </style>
     </head>
-    <style>
-        :root {
-            color-scheme: light dark;
-            --border-radius: 10px;
-            --font-size: 3.5rem;
-            --font-family: Arial, sans-serif;
-            --color-hours: #f00;
-            --color-minutes: #0f0;
-            --color-seconds: rgb(255, 242, 0);
-        }
-        body {
-            display: grid;
-            place-items: center;
-            font-family: monospace;
-        }
-        main {
-            margin-top: 34px;
-        }
-        .Anuncio {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            box-sizing: content-box;
-            margin: 0;
-            font-size: 3rem;
-            font-family: 'Mountains of Christmas', serif;
-            font-weight: 700;
-            font-style: normal;
-            h1 {
-                color: #fff;
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff0000, 0 0 70px #ff0000,
-                    0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
-                animation: text-shadow 10s ease-in-out infinite;
-            }
-            h1::before {
-                content: 'For';
-                position: absolute;
-                color: #fff;
-                font-size: 1.4rem;
-                top: 25%;
-                left: 5%;
-            }
-        }
-        @keyframes text-shadow {
-            0% {
-                text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff0000, 0 0 70px #ff0000,
-                    0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
-            }
-            100% {
-                text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #00ff00, 0 0 35px #00ff00,
-                    0 0 40px #00ff00, 0 0 50px #00ff00, 0 0 75px #00ff00;
-            }
-        }
-        x-counter {
-            margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            padding: 20px;
-            font-size: var(--font-size);
-            .hours,
-            .minutes,
-            .days,
-            .seconds {
-                position: relative;
-                border-radius: var(--border-radius);
-                padding: 10px;
-                background-color: rgba(0, 0, 0, 0.5);
-                color: #fff;
-            }
-            .hours {
-                color: var(--color-hours);
-            }
-            .hours::after {
-                content: 'Hours';
-                position: absolute;
-                color: #8a8a8a4e;
-                font-size: 12px;
-                bottom: -20px;
-                left: 25%;
-            }
-            .minutes {
-                color: var(--color-minutes);
-            }
-            .minutes::after {
-                content: 'Minutes';
-                position: absolute;
-                color: #8a8a8a4e;
-                font-size: 12px;
-                bottom: -20px;
-                left: 25%;
-            }
-            .days {
-                color: var(--color-seconds);
-            }
-            .days::after {
-                content: 'Days';
-                position: absolute;
-                color: #8a8a8a4e;
-                font-size: 12px;
-                bottom: -20px;
-                left: 25%;
-            }
-            .seconds {
-                margin-top: 11%;
-                color: rgb(128, 128, 128);
-                font-size: 12px;
-            }
-        }
-        @media screen and (max-width: 768px) {
-            body {
-                font-size: 16px;
-                display: flex;
-                height: 80vh;
-            }
-            main {
-                margin: auto;
-            }
-            .tree {
-                display: none;
-            }
-
-            .Anuncio {
-                font-size: 2rem;
-            }
-
-            x-counter {
-                gap: 5px;
-                padding: 10px;
-                font-size: 2rem;
-            }
-
-            .hours,
-            .minutes,
-            .days {
-                padding: 50px;
-                position: relative;
-            }
-        }
-    </style>
     <body>
         <main>
             <div class="Anuncio">
@@ -193,6 +51,42 @@
                 </div>
             </div>
             <x-counter>
+                <div class="date_card">
+                    <div class="circle"></div>
+                    <div class="date">
+                        <header>
+                            <span>25</span>
+                            <span>12</span>
+                            <span id="current-year"></span>
+                        </header>
+                        <article class="Calendar">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </article>
+                    </div>
+                </div>
                 <span class="days">00</span>
                 <p>:</p>
                 <span class="hours">00</span>
@@ -223,5 +117,8 @@
         }
 
         worker.postMessage({ duration: 1000 })
+    </script>
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear()
     </script>
 </html>
