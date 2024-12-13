@@ -1,16 +1,21 @@
+# Image
 
-# Counter for Christmas
+![Christmas Countdown](./image/Captura.png)
+
+## Counter for Christmas
 
 Un contador de días hasta Navidad, estilizado con CSS y fácil de integrar en cualquier sitio web.
 
 ## Instalación
 
 1. Clona este repositorio:
+
    ```bash
    git clone https://github.com/c0d3hdz/Counter_for_Christmas.git
    ```
 
 2. Navega al directorio del proyecto:
+
    ```bash
    cd Counter_for_Christmas
    ```

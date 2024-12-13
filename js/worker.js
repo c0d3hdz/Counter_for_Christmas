@@ -1,4 +1,3 @@
-// worker.js
 onmessage = event => {
     const { duration } = event.data //ya no se usa pero aun no logro eliminarlo
     const now = new Date()
