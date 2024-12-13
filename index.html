@@ -83,7 +83,6 @@
                             <div></div>
                             <div></div>
                             <div></div>
-                            <div></div>
                         </article>
                     </div>
                 </div>
@@ -95,6 +94,14 @@
                 <span class="seconds">00</span>
             </x-counter>
         </main>
+        <x-modal>
+            <div class="content_cellebrate"></div>
+            <span>
+                <h3>Merry christmas!</h3>
+                <p>Have a Merry Christmas!</p>
+                <a href="https://www.youtube.com/watch?v=aAkMkVFwAoo" target="_blank">Open letter</a>
+            </span>
+        </x-modal>
     </body>
     <script type="module">
         const daysElement = document.querySelector('.days')
@@ -104,19 +111,28 @@
 
         const formatTime = time => (time < 10 ? `0${time}` : time)
 
-        const worker = new Worker('worker.js')
+        const worker = new Worker('./js/worker.js')
         worker.onmessage = ({ data }) => {
             daysElement.textContent = formatTime(data.days)
             hoursElement.textContent = formatTime(data.hours)
             minutesElement.textContent = formatTime(data.minutes)
             secondsElement.textContent = formatTime(data.seconds)
+
+            if (data.isChristmasPassed) {
+                document.querySelector('x-modal').style.display = 'flex'
+            }
+            console.log(data)
         }
 
         worker.onerror = event => {
             console.error('Error en el worker:', event)
         }
 
-        worker.postMessage({ duration: 1000 })
+        function updateCounter() {
+            worker.postMessage({ duration: 1000 })
+        }
+
+        updateCounter()
     </script>
     <script>
         document.getElementById('current-year').textContent = new Date().getFullYear()

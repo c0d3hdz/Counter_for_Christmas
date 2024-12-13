@@ -1,5 +1,6 @@
 :root {
     color-scheme: light dark;
+    --bg-color: #000;
     --border-radius: 10px;
     --font-size: 3.5rem;
     --font-family: Arial, sans-serif;
@@ -13,7 +14,7 @@ body {
     font-family: monospace;
 }
 main {
-    margin-top: 34px;
+    margin-top: auto;
 }
 .Anuncio {
     position: relative;
@@ -163,7 +164,94 @@ x-counter {
         }
     }
 }
+x-modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
 
+x-modal .content_cellebrate {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(252, 255, 190);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    transform: rotate(-190deg);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+x-modal .content_cellebrate::before {
+    content: '';
+    position: absolute;
+    top: 9px;
+    left: 243px;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(252, 255, 190, 0);
+    border-bottom: 2px solid #38341b;
+    transform: rotate(45deg);
+    transform-origin: top left;
+}
+
+x-modal .content_cellebrate::after {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(252, 255, 190, 0);
+    border-top: 2px solid #38341b;
+    border-right: 2px solid #38341b;
+    transform: rotate(-45deg);
+    transform-origin: bottom left;
+    border-top-right-radius: 10px;
+}
+x-modal span {
+    position: absolute;
+    rotate: -10deg;
+    h3 {
+        font-size: 2rem;
+        font-weight: 800;
+        background-image: linear-gradient(90deg, #f00, rgb(255, 245, 61));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 30px #000000;
+        font-family: 'Mountains of Christmas', serif;
+    }
+    p {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: #000;
+        margin-top: 0;
+    }
+    a {
+        text-decoration: none;
+        color: #ffffff;
+        font-size: 1.2rem;
+        font-weight: 700;
+        background-color: #f00;
+        padding: 5px 10px;
+        box-sizing: content-box;
+        border-radius: 5%;
+        transition: all 0.5s ease;
+    }
+    a:hover {
+        background-color: rgb(255, 138, 138);
+    }
+}
 @keyframes rotate_card {
     0% {
         transform: rotateY(25deg) rotateX(0deg) rotateZ(10deg) translateZ(0px);
